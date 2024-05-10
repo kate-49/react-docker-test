@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY package.json yarn.lock ./
-RUN yarn install --production
+COPY package.json ./
 COPY . .
-CMD ["npm", "src/App.js"]
+ENTRYPOINT ["npm"]
+CMD ["start"]
 EXPOSE 3000
